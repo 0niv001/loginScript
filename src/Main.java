@@ -33,6 +33,7 @@ public class Main {
 
                     // If there is a user with this name and password in the Array list do the following.
                     // Get username and password using Hashmap??
+                    // change code so checks on who the users are fixed.
                     if(oldUser.getUserName().equals(userName) && oldUser.getPassword().equals(password)) {
                         do {
                             System.out.print("""
@@ -53,7 +54,7 @@ public class Main {
                                     if (newUser.getUserName() == null) {
                                         System.out.println("There is no current user");
                                     } else {
-                                        System.out.printf("Current user: %s\n", newUser.getUserName());
+                                        System.out.printf("Current user: %s\n", oldUser.getUserName());
                                     }
                                     break;
                                 case 2:
