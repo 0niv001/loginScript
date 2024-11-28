@@ -9,7 +9,9 @@ public class Main {
         String password;
         byte menuSelection;
         User newUser = new User();
-        User oldUser = new User("Jack", "test");
+        User oldUser = new User();
+
+        //Testing
         User adminUser = new Admin("niv", "root");
 
 
@@ -63,10 +65,10 @@ public class Main {
                                     if (toChange.equals("u")) {
                                         System.out.println("Enter new username");
                                         newUser.setUserName(input.next());
-                                        System.out.println("Username changed to: " + newUser.getUserName());
+                                        System.out.println("Username changed to: " + oldUser.getUserName());
                                     } else if (toChange.equals("p")) {
                                         System.out.println("Enter new password");
-                                        newUser.setPassword(input.next());
+                                        oldUser.setPassword(input.next());
                                         input.nextLine();
                                         System.out.println("Password changed");
                                     } else {
