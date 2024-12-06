@@ -26,12 +26,8 @@ public class Main {
     }
 
     public static boolean logIn(String user, String pass) {
-        Scanner logInput = new Scanner(System.in);
-        System.out.println("Enter Username:");
-        String username = logInput.next();
-        System.out.println("Enter Password:");
-        String password = logInput.next();
-        if (user.equals(username) && pass.equals(password)) {
+        String[] id = credentials();
+        if (user.equals(id[0]) && pass.equals(id[1])) {
             return true;
         } else {
             System.out.println("Invalid credentials");
@@ -39,14 +35,10 @@ public class Main {
         }
     }
 
-    public static void signUp(User newUser) {
-        Scanner signInput = new Scanner(System.in);
-        System.out.println("Enter Username:");
-        String username = signInput.next().toLowerCase();
-        System.out.println("Enter Password:");
-        String password = signInput.next();
-        newUser = new User(username,password);
-        System.out.printf("User %s Created\n", newUser.getUserName());
+    public static void signUp(User test) {
+        String [] id = credentials();
+        test = new User(id[0],id[1]);
+        System.out.printf("User %s Created\n", test.getUserName());
     }
 
     public static void menuSelection(User test){
@@ -103,5 +95,15 @@ public class Main {
             default:
                 System.out.println("Not a valid input, try again.");
         }
+    }
+
+    public static String[] credentials(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Username:");
+        String username = input.next().toLowerCase();
+        System.out.println("Enter Password");
+        String password = input.next();
+        String[] credentials = {username, password};
+        return credentials;
     }
 }
